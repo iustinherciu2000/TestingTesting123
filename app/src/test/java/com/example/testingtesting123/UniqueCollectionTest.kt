@@ -16,7 +16,11 @@ class UniqueCollectionTest {
     // TODO 1: Write a test to ensure items can be added to the collection
     @Test
     fun addAnItem() {
+        val item = Item("item1")
+        collection.addItem(item)
 
+        val result = collection.size()
+        assert(result == 1) { "Failed to add item to the collection" }
     }
 
     // TODO 2: Write a test to ensure that only unique items can be added to the collection
