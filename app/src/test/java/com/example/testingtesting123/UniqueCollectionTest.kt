@@ -27,7 +27,14 @@ class UniqueCollectionTest {
     // Uniqueness is determined by the Item.name property, which is set via the constructor
     @Test
     fun addUniqueItem() {
+        val item1 = Item("item1")
+        val item2 = Item("ITEM1") // Case-insensitive match
 
+        collection.addItem(item1)
+        collection.addItem(item2)
+
+        val result = collection.size()
+        assert(result == 1) { "Duplicate items were added to the collection" }
     }
 
     // Test Driven Development (TDD) test - complete specified function so that this test passes
